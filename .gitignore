@@ -1,0 +1,17 @@
+# Ignore the Virtual Environment
+.venv/
+venv/
+env/
+
+# Ignore Python Cache (The __pycache__ folders)
+__pycache__/
+*.py[cod]
+
+# Ignore the AI Model Cache (Download it fresh on server or use LFS)
+model_cache/
+
+# Ignore OS files
+.DS_Store
+
+# Ignore Environment Variables
+.env
