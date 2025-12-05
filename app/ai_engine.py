@@ -1,7 +1,8 @@
 from sentence_transformers import SentenceTransformer
 import pandas as pd
-from sklearn.cluster import KMeans
 import numpy as np
+from sklearn.cluster import KMeans
+from sklearn.decomposition import PCA
 
 
 class CrisisEngine:
@@ -25,6 +26,7 @@ class CrisisEngine:
         #Squash 384 dims -> 2 dims (x, y)
         self.pca = PCA(n_components=2)
         self.coords = self.pca.fit_transform(self.vectors)
+        
     def get_dashboard_data(self):
         """
         Returns data ready for the Frontend Map & Charts
@@ -40,7 +42,6 @@ class CrisisEngine:
                 "pca_y": self.coords[i][1],
             })
             return results
-        
         
         
         
